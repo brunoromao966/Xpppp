@@ -1,0 +1,13 @@
+/* Mobile Header Height Fix */
+@media (max-width: 991.98px) {
+    /* Adicionar padding-top ao body apenas no mobile para compensar navbar fixo */
+    body {
+        padding-top: 60px !important;
+    }
+    
+    /* Garantir que sections não tenham margin-top negativa que cancele o padding */
+    .slider-one,
+    section:first-of-type {
+        margin-top: 0 !important;
+    }
+}

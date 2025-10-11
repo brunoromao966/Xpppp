@@ -1,0 +1,1503 @@
+/* XPANDE Landing Page - Modern Customizations */
+
+/* Sistema de highlights modernos */
+.highlight-tech {
+    position: relative;
+    display: inline-block;
+    background: var(--gradient-tech);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.highlight-tech::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+    border-radius: 1px;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.5; transform: scaleX(0.8); }
+    50% { opacity: 1; transform: scaleX(1); }
+}
+
+/* Scroll suave para navegação interna */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Indicador de progresso da página */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, var(--main-color), var(--color-five));
+    z-index: 10000;
+    transition: width 0.3s ease;
+}
+
+/* Sistema de botões modernos com gradientes */
+.template-btn {
+    position: relative;
+    border-radius: 12px !important;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px 32px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: var(--shadow-soft);
+    border: none;
+    background: linear-gradient(135deg, #0eb5ba 0%, #08a0a4 100%) !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.template-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(14, 181, 186, 0.3);
+    background: linear-gradient(135deg, #08a0a4 0%, #0eb5ba 100%) !important;
+}
+
+.template-btn .btn-wrap {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.template-btn .text-one,
+.template-btn .text-two {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    font-weight: bold !important;
+}
+
+/* Botão específico do header - manter gradiente e bordas arredondadas */
+.main-header_buttons .template-btn {
+    background: linear-gradient(135deg, #0eb5ba 0%, #08a0a4 100%) !important;
+    border: 2px solid transparent !important;
+    border-radius: 12px !important;
+    background-clip: padding-box;
+}
+
+.main-header_buttons .template-btn:hover {
+    background: linear-gradient(135deg, #08a0a4 0%, #0eb5ba 100%) !important;
+    border: 2px solid rgba(14, 181, 186, 0.5) !important;
+    box-shadow: 0 8px 25px rgba(14, 181, 186, 0.3);
+}
+
+/* Variação de botão secundário */
+.template-btn.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--white-color);
+}
+
+/* Botão escuro para seção CTA */
+.template-btn.btn-style-three {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+    color: white !important;
+    border: 2px solid #333 !important;
+}
+
+.template-btn.btn-style-three:hover {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+    border: 2px solid #555 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo personalizado para CTA subtitle */
+.cta-one_subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-three);
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Melhorias na navegação */
+.navigation a {
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--main-color) !important;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 768px) {
+    .cta-one_subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .template-btn {
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Animações suaves para elementos */
+.service-block_one-inner,
+.about-one_content-outer,
+.counter-block_one-inner {
+    transition: transform 0.3s ease;
+}
+
+.service-block_one-inner:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo do header fixo - APENAS DESKTOP para evitar conflito com mobile */
+@media (min-width: 992px) {
+    .main-header,
+    .main-header.header-style-one,
+    .main-header.fixed-header {
+        position: fixed !important;
+        top: 0 !important;
+        width: 100% !important;
+        z-index: 999 !important;
+        background: rgba(var(--color-two-rgb), 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        transition: all 0.3s ease !important;
+        padding: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+    }
+}
+
+/* Prevenir JavaScript de aplicar classes de scroll no mobile */
+@media (max-width: 991.98px) {
+    .main-header.scrolled,
+    .main-header.fixed-header {
+        position: static !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+}
+
+/* No mobile, OCULTAR apenas header desktop, mantendo navbar mobile */
+@media (max-width: 991.98px) {
+    .main-header .header-lower {
+        display: none !important;
+    }
+    
+    .main-header {
+        position: static !important;
+        background: transparent !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        z-index: auto !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-header .header-lower,
+    .main-header.header-style-one .header-lower,
+    .main-header.fixed-header .header-lower {
+        padding: 12px 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    .main-header .inner-container,
+    .main-header .header-lower .inner-container,
+    .main-header.fixed-header .inner-container,
+    .main-header.fixed-header .header-lower .inner-container {
+        padding: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+        /* Manter layout Bootstrap original - não alterar display */
+    }
+
+    .main-header.scrolled,
+    .main-header.fixed-header {
+        background: rgba(var(--color-two-rgb), 0.98) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+/* Forçar altura específica desde o início - APENAS DESKTOP */
+@media (min-width: 992px) {
+    .main-header {
+        max-height: 75px !important;
+    }
+
+    .main-header .header-lower {
+        max-height: 75px !important;
+    }
+
+    /* Ajuste de espaçamento para o header fixo - APENAS DESKTOP */
+    body {
+        padding-top: 75px;
+    }
+}
+
+/* Garantir alinhamento vertical dos elementos do header sem quebrar layout - APENAS DESKTOP */
+@media (min-width: 992px) {
+    .main-header .logo-box,
+    .main-header .nav-outer,
+    .main-header .outer-box {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .main-header .d-flex {
+        align-items: center !important;
+    }
+}
+
+/* Melhorar visibilidade dos links na navegação mobile */
+.mobile-menu .navigation a {
+    color: var(--white-color) !important;
+    padding: 15px 30px;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu .navigation a:hover {
+    background-color: var(--main-color);
+    color: var(--white-color) !important;
+    padding-left: 40px;
+}
+
+/* Botão fixo mobile - CORRIGIDO PARA iOS */
+.fixed-mobile-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+    display: none;
+    /* Correção para iOS Safari */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.fixed-mobile-cta .template-btn {
+    border-radius: 50px !important;
+    padding: 15px 25px;
+    box-shadow: 0 4px 15px rgba(var(--main-color-rgb), 0.3);
+    animation: pulse 2s infinite;
+    /* Correção para iOS Safari */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(var(--main-color-rgb), 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(var(--main-color-rgb), 0.5);
+        transform: translateY(-2px);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(var(--main-color-rgb), 0.3);
+    }
+}
+
+/* Fixed mobile CTA button */
+@media (max-width: 768px) {
+    .fixed-mobile-cta {
+        display: block;
+    }
+}
+
+/* Bootstrap 5.x Navbar Styling - APENAS MOBILE - CORRIGIDO PARA iOS */
+@media (max-width: 991.98px) {
+    .navbar.d-lg-none {
+        padding: 4px 0 !important;
+        background: rgba(var(--color-two-rgb), 0.98) !important;
+        backdrop-filter: blur(10px) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        display: flex !important;
+        align-items: center !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        /* Correção para iOS Safari - mantém header fixo */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: transform;
+    }
+
+    .navbar.d-lg-none .container-fluid {
+        padding: 0 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .navbar.d-lg-none .navbar-brand {
+        display: flex !important;
+        align-items: center !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .navbar.d-lg-none .navbar-brand img {
+        height: 40px !important;
+        width: auto !important;
+    }
+}
+
+/* Garantir que o navbar mobile não apareça no desktop */
+@media (min-width: 992px) {
+    .navbar.d-lg-none {
+        display: none !important;
+    }
+}
+
+/* Botão hambúrguer - APENAS MOBILE */
+@media (max-width: 991.98px) {
+    .navbar-toggler {
+        border: none !important;
+        padding: 8px 12px !important;
+        border-radius: 6px !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        transition: all 0.3s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .navbar-toggler:hover {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        transform: scale(1.05) !important;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 2px rgba(14, 181, 186, 0.5) !important;
+    }
+}
+
+/* Ocultar botão hambúrguer no desktop */
+@media (min-width: 992px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-toggler-icon {
+        width: 20px !important;
+        height: 20px !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    .navbar-collapse {
+        background: rgba(var(--color-two-rgb), 0.98) !important;
+        backdrop-filter: blur(15px) !important;
+        border-radius: 12px !important;
+        margin-top: 15px !important;
+        padding: 20px !important;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .navbar-nav .nav-link {
+        color: white !important;
+        padding: 15px 20px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        transition: all 0.3s ease !important;
+        font-weight: 500 !important;
+        display: block !important;
+        text-decoration: none !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        background-color: var(--main-color) !important;
+        color: white !important;
+        border-radius: 6px !important;
+        border-bottom: 1px solid transparent !important;
+    }
+    
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none !important;
+    }
+    
+    /* Garantir que o mobile navbar não tenha conflitos com header desktop */
+    .main-header .inner-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .main-header .logo-box {
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+    }
+    
+    .main-header .nav-outer {
+        margin: 0 !important;
+    }
+    
+    .main-header .outer-box {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* Remover bordas de spans destacados */
+.service-block_one-text span,
+.testimonial-block_one-text span,
+.slider-one_text span,
+.about-one_content-outer span {
+    border: none !important;
+    background: none !important;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+/* Corrigir menu mobile */
+.mobile-menu {
+    background: rgba(var(--color-two-rgb), 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.mobile-menu .navigation {
+    padding: 20px 0;
+}
+
+.mobile-menu .navigation li {
+    margin: 0;
+}
+
+.mobile-menu .navigation li a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Correções específicas para problemas identificados */
+
+/* 1. Corrigir alinhamento da seção metodologia */
+.steps-one .sec-title {
+    text-align: left !important;
+    margin-bottom: 30px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.steps-one .sec-title_title {
+    text-align: left !important;
+    display: block !important;
+    margin-bottom: 10px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.steps-one .sec-title_heading {
+    text-align: left !important;
+    display: block !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Para desktop, garantir que fique na borda esquerda */
+@media (min-width: 992px) {
+    .steps-one .inner-container {
+        text-align: left !important;
+    }
+    
+    .steps-one .sec-title {
+        max-width: none !important;
+        width: 100% !important;
+    }
+}
+
+/* 2. Corrigir ícones que aparecem como quadrados */
+.footer-social_box i,
+.counter-block_one-icon,
+.answer-one_list li i {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+    font-weight: 900 !important;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+/* Especificamente para ícones de redes sociais */
+.footer-social_box .fa-facebook-f::before { content: "\f39e"; }
+.footer-social_box .fa-twitter::before { content: "\f099"; }
+.footer-social_box .fa-youtube::before { content: "\f167"; }
+.footer-social_box .fa-instagram::before { content: "\f16d"; }
+
+/* Especificamente para ícones de check */
+.answer-one_list li i.fa-check::before { 
+    content: "\f00c"; 
+    color: #0eb5ba;
+}
+
+/* Especificamente para ícones de estrelas */
+.testimonial-block_one-rating .fa-star,
+.about-one_rating .fa-star {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    color: #ffc107 !important;
+    font-size: inherit !important;
+    display: inline-block !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+}
+
+.testimonial-block_one-rating .fa-star::before,
+.about-one_rating .fa-star::before {
+    content: "\f005" !important;
+    color: #ffc107 !important;
+}
+
+/* 3. Corrigir cores das frases na seção escura */
+.choose-one .counter-block_one-text {
+    color: white !important;
+}
+
+.choose-one h2,
+.choose-one .sec-title_heading,
+.choose-one .counter-block_one-count {
+    color: white !important;
+}
+
+/* 4. Corrigir texto cinza que deve ser branco na seção CTA */
+.cta-one_subtitle {
+    color: white !important;
+    opacity: 0.9;
+}
+
+/* 5. Garantir que todos os botões tenham o gradiente correto */
+.slider-one_button .template-btn,
+.about-one_options .template-btn,
+.answer-one_button .template-btn,
+.faq-one_button .template-btn {
+    background: linear-gradient(135deg, #0eb5ba 0%, #08a0a4 100%) !important;
+}
+
+/* 6. Remover estilos ::before e ::after problemáticos */
+.template-btn::before,
+.template-btn::after {
+    display: none !important;
+}
+
+/* 7. Ajustar tamanho da logo e melhorar posicionamento */
+.main-header .logo img {
+    max-height: 45px !important;
+    height: 45px !important;
+    width: auto !important;
+}
+
+/* Ajustar altura da barra superior para 70px - APENAS DESKTOP */
+@media (min-width: 992px) {
+    .main-header {
+        max-height: 70px !important;
+        min-height: 70px !important;
+    }
+
+    .main-header .header-lower {
+        max-height: 70px !important;
+        min-height: 70px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* Ajustar padding do body para compensar - APENAS DESKTOP */
+    body {
+        padding-top: 70px !important;
+    }
+}
+
+/* Empurrar logo e botão para os lados usando margens, mantendo layout Bootstrap */
+.main-header .inner-container {
+    height: 70px !important;
+    /* Manter d-flex justify-content-between align-items-center do Bootstrap */
+}
+
+/* Logo posicionamento normal para desktop */
+@media (min-width: 992px) {
+    .main-header .logo-box {
+        display: flex !important;
+        align-items: center !important;
+        height: 70px !important;
+        margin-right: auto !important;
+        padding-right: 150px !important;
+        margin-left: -120px !important;
+    }
+}
+
+.main-header .logo-box .logo {
+    padding: 12px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Menu com espaçamento natural */
+.main-header .nav-outer {
+    display: flex !important;
+    align-items: center !important;
+    height: 70px !important;
+    margin: 0 20px !important;
+}
+
+/* Botão empurrado para o lado direito - extremo - APENAS DESKTOP */
+@media (min-width: 992px) {
+    .main-header_buttons {
+        display: flex !important;
+        align-items: center !important;
+        height: 70px !important;
+        margin-left: auto !important;
+        padding-left: 200px !important;
+        margin-right: -150px !important;
+    }
+}
+
+/* Diminuir espessura apenas do menu */
+.main-header .main-menu .navigation > li > a {
+    padding: 12px 0 !important;
+    line-height: 20px !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Centralizar apenas verticalmente o botão do header - OCULTAR NO MOBILE */
+@media (min-width: 768px) {
+    .main-header_buttons {
+        display: flex !important;
+        align-items: center !important;
+        height: 70px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-header_buttons {
+        display: none !important;
+    }
+}
+
+/* 8. Corrigir cores das frases das etapas */
+.steps-one .step-block_one-text {
+    color: white !important;
+}
+
+.steps-one .step-block_one-title {
+    color: white !important;
+}
+
+.steps-one .step-block_one-steps {
+    color: white !important;
+}
+
+/* 9. Corrigir cor da frase no footer */
+.footer-contact p {
+    color: white !important;
+}
+
+/* 10. Forçar centralização dos textos dos botões - CORRIGIR PROBLEMA DE PADDING */
+.template-btn .btn-wrap {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.template-btn .btn-wrap span {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.template-btn .text-one,
+.template-btn .text-two {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Remover qualquer float ou posicionamento que possa interferir */
+.template-btn,
+.template-btn .btn-wrap,
+.template-btn .text-one,
+.template-btn .text-two {
+    float: none !important;
+    position: relative !important;
+}
+
+/* 11. Ajustar posicionamento da seção CTA - subir moderadamente */
+.cta-one_title-column {
+    padding-top: 20px !important;
+    margin-top: 0 !important;
+}
+
+.cta-one_title-outer {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.cta-one_title {
+    margin-top: 0 !important;
+    margin-bottom: 25px !important;
+}
+
+.cta-one_subtitle {
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+}
+
+.cta-one_button {
+    margin-top: 15px !important;
+    padding-top: 0 !important;
+}
+
+/* Ajustes específicos para desktop - baixar frases, subir botão */
+@media (min-width: 992px) {
+    .cta-one_title-column {
+        padding-top: 60px !important;
+        margin-top: 0px !important;
+    }
+    
+    .cta-one_title {
+        font-size: 48px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 15px !important;
+        margin-top: 20px !important;
+    }
+    
+    .cta-one_subtitle {
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 20px !important;
+        margin-top: 0px !important;
+    }
+    
+    .cta-one_button {
+        margin-top: -15px !important;
+    }
+}
+
+/* 12. Ajustar posição dos botões sociais e prevenir sobreposição */
+.footer-social_box {
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+/* Ajustar footer para dar espaço aos botões sociais */
+.main-footer .widgets-section {
+    padding-bottom: 40px !important;
+}
+
+/* Garantir que o botão fixo mobile não sobreponha e fique abaixo do indicador */
+@media (max-width: 768px) {
+    .fixed-mobile-cta {
+        bottom: 20px !important;
+        z-index: 9998 !important;
+    }
+    
+    /* Garantir que o indicador de progresso fique por cima */
+    .scroll-indicator {
+        z-index: 10000 !important;
+    }
+    
+    /* Ajustar progress-wrap para não conflitar */
+    .progress-wrap {
+        z-index: 9999 !important;
+        bottom: 100px !important;
+    }
+}
+
+/* 13. Estilizar seção dos botões sociais antes do footer bottom */
+.social-box-before-footer {
+    background: transparent;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.social-box-before-footer .footer-social_box {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-social_box a {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 8px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.footer-social_box a:hover {
+    transform: translateY(-3px) scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(14, 181, 186, 0.4) !important;
+    background: linear-gradient(135deg, #0eb5ba 0%, #08a0a4 100%) !important;
+    border: 2px solid transparent !important;
+}
+
+.footer-social_box a i {
+    font-size: 20px !important;
+    line-height: 1 !important;
+}
+
+/* Correção específica para posicionamento da seção hero */
+/* Fazer o conteúdo da seção hero subir mais para melhor posicionamento */
+.slider-one_content-inner {
+    padding-top: 40px !important;
+    margin-top: -20px !important;
+}
+
+.slider-one_title {
+    margin-bottom: 25px !important;
+}
+
+.slider-one_heading {
+    margin-bottom: 25px !important;
+    line-height: 1.2 !important;
+}
+
+.slider-one_text {
+    margin-bottom: 35px !important;
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+}
+
+.slider-one_button {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Ajustes específicos para desktop - subir o conteúdo ainda mais */
+@media (min-width: 992px) {
+    .slider-one_content-inner {
+        padding-top: 30px !important;
+        margin-top: -60px !important;
+    }
+
+    .slider-one_heading {
+        font-size: 62px !important;
+        line-height: 1.15 !important;
+    }
+
+    .slider-one_text {
+        font-size: 18px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
+/* Garantir que o botão "AGENDAR CALL GRATUITA" fique visível apenas no desktop */
+@media (max-width: 991px) {
+    .slider-one_button {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .slider-one_button {
+        display: flex !important;
+        margin-top: 65px !important;
+    }
+    
+    .slider-one_button .template-btn {
+        padding: 20px 40px !important;
+        font-size: 18px !important;
+        min-height: 60px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* Melhorias de responsividade */
+/* Mobile first adjustments */
+/* Correções específicas para iOS Safari */
+body.is-ios .navbar.d-lg-none {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+body.is-ios .fixed-mobile-cta {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+}
+
+/* Prevenir "bounce" scroll no iOS que pode afetar elementos fixos */
+body.is-ios {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+
+@media (max-width: 575px) {
+    /* Hero section mobile */
+    .slider-one_content-inner {
+        padding-top: 20px !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+    
+    .slider-one_heading {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .slider-one_text {
+        font-size: 16px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    /* Buttons mobile */
+    .template-btn {
+        padding: 14px 24px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Sections mobile */
+    .sec-title_heading {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .sec-title_text {
+        font-size: 16px !important;
+    }
+}
+
+/* Tablets */
+@media (min-width: 576px) and (max-width: 991px) {
+    .slider-one_heading {
+        font-size: 36px !important;
+    }
+    
+    .slider-one_text {
+        font-size: 17px !important;
+    }
+}
+
+/* Garantir que o Bootstrap 5 seja mantido */
+/* Preservar classes Bootstrap originais */
+.container,
+.container-fluid,
+.row,
+.col,
+.col-*,
+.d-flex,
+.justify-content-*,
+.align-items-*,
+.flex-wrap {
+    /* Manter todas as propriedades Bootstrap intactas */
+}
+
+/* Desktop Navigation Styling */
+@media (min-width: 992px) {
+    .navbar-nav .nav-link {
+        color: white !important;
+        padding: 12px 20px !important;
+        transition: all 0.3s ease !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: var(--main-color) !important;
+    }
+}
+
+/* GARANTIAS BOOTSTRAP 5.x - NÃO ALTERAR */
+/* Manter integridade total do Bootstrap 5.x */
+.container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+    /* Bootstrap container mantido intacto */
+}
+
+.row {
+    /* Bootstrap row mantido intacto */
+}
+
+[class*="col-"] {
+    /* Bootstrap columns mantidas intactas */
+}
+
+.d-flex, .d-inline-flex, .d-block, .d-inline-block, .d-none {
+    /* Bootstrap display classes mantidas intactas */
+}
+
+.justify-content-start, .justify-content-end, .justify-content-center, 
+.justify-content-between, .justify-content-around, .justify-content-evenly {
+    /* Bootstrap justify-content classes mantidas intactas */
+}
+
+.align-items-start, .align-items-end, .align-items-center, 
+.align-items-baseline, .align-items-stretch {
+    /* Bootstrap align-items classes mantidas intactas */
+}
+
+.flex-wrap, .flex-nowrap, .flex-wrap-reverse {
+    /* Bootstrap flex-wrap classes mantidas intactas */
+}
+
+/* Bootstrap responsive breakpoints mantidos */
+@media (min-width: 576px) { /* sm */ }
+@media (min-width: 768px) { /* md */ }
+@media (min-width: 992px) { /* lg */ }
+@media (min-width: 1200px) { /* xl */ }
+@media (min-width: 1400px) { /* xxl */ }
+
+/* ESTILOS PARA ADVANTAGE-BLOCKS E SEGMENT-BLOCKS */
+
+/* Advantage Blocks Styling */
+.advantage-block {
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.advantage-block-inner {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    
+    /* Gradiente na borda */
+    border: 2px solid transparent;
+    background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) padding-box,
+                linear-gradient(135deg, #0eb5ba, #08a0a4, #0eb5ba) border-box;
+    
+    overflow: hidden;
+}
+
+.advantage-block-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(14, 181, 186, 0.1), rgba(8, 160, 164, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.advantage-block-inner:hover::before {
+    opacity: 1;
+}
+
+.advantage-block-inner:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(14, 181, 186, 0.2);
+    border: 2px solid transparent;
+    background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)) padding-box,
+                linear-gradient(135deg, #0eb5ba, #08a0a4) border-box;
+}
+
+.advantage-block-icon {
+    font-size: 48px;
+    color: #0eb5ba;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.advantage-block-inner:hover .advantage-block-icon {
+    color: #08a0a4;
+    transform: scale(1.1);
+}
+
+.advantage-block-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    line-height: 1.3;
+}
+
+.advantage-block-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.advantage-block-inner:hover .advantage-block-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Segment Blocks Styling */
+.segments-section {
+    margin-top: 80px;
+}
+
+.segment-block {
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.segment-block-inner {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 30px 25px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.segment-block-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(14, 181, 186, 0.05), rgba(8, 160, 164, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.segment-block-inner:hover::before {
+    opacity: 1;
+}
+
+.segment-block-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(14, 181, 186, 0.15);
+    border: 1px solid rgba(14, 181, 186, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.segment-block-icon {
+    font-size: 36px;
+    color: #0eb5ba;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.segment-block-inner:hover .segment-block-icon {
+    color: #08a0a4;
+    transform: scale(1.05);
+}
+
+.segment-block-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    line-height: 1.4;
+}
+
+.segment-block-inner:hover .segment-block-title {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .advantage-block-inner {
+        padding: 30px 20px;
+    }
+    
+    .advantage-block-icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .advantage-block-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .advantage-block-text {
+        font-size: 15px;
+    }
+    
+    .segment-block-inner {
+        padding: 25px 20px;
+    }
+    
+    .segment-block-icon {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .segment-block-title {
+        font-size: 17px;
+    }
+    
+    .segments-section {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 575px) {
+    .advantage-block-inner {
+        padding: 25px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .advantage-block-title {
+        font-size: 18px;
+    }
+    
+    .segment-block-inner {
+        padding: 20px 15px;
+        margin-bottom: 15px;
+    }
+    
+    .segment-block-title {
+        font-size: 16px;
+    }
+    
+    .segments-section {
+        margin-top: 40px;
+    }
+}
+
+/* Fix section positioning and z-index issues - NEW ORDER */
+.services-one#segmentos {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.social-one#tecnologias {
+    position: relative !important;
+    z-index: 2 !important;
+    margin-top: 0 !important;
+}
+
+.faq-one {
+    position: relative !important;
+    z-index: 3 !important;
+    margin-top: 0 !important;
+}
+
+.cta-one {
+    position: relative !important;
+    z-index: 4 !important;
+    margin-top: 0 !important;
+    clear: both !important;
+}
+
+/* Ensure proper spacing between final sections in correct order */
+.services-one#segmentos + .social-one#tecnologias {
+    margin-top: 80px !important;
+}
+
+.social-one#tecnologias + .faq-one {
+    margin-top: 80px !important;
+}
+
+.faq-one + .cta-one {
+    margin-top: 120px !important;
+    padding-top: 80px !important;
+}
+
+@media (max-width: 768px) {
+    .services-one#segmentos + .social-one#tecnologias,
+    .social-one#tecnologias + .faq-one {
+        margin-top: 60px !important;
+    }
+    
+    .faq-one + .cta-one {
+        margin-top: 80px !important;
+        padding-top: 60px !important;
+    }
+}
+
+/* CSS para seção #diferenciais unificada */
+#diferenciais {
+    position: relative;
+    z-index: 1;
+}
+
+#diferenciais .about-one {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#diferenciais .answer-one {
+    padding-top: 80px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#diferenciais .choose-one {
+    padding-top: 80px !important;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    #diferenciais .answer-one {
+        padding-top: 60px !important;
+    }
+    
+    #diferenciais .choose-one {
+        padding-top: 60px !important;
+    }
+}
+
+/* Sombra elegante para image-1.png */
+.slider-one_image img[src*="image-1.png"] {
+    position: relative;
+    border-radius: 20px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 10px 30px rgba(14, 181, 186, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.slider-one_image img[src*="image-1.png"]:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.4),
+        0 15px 40px rgba(14, 181, 186, 0.3),
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Efeito de brilho sutil na imagem */
+.slider-one_image img[src*="image-1.png"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Container da imagem com efeito adicional */
+.slider-one_image {
+    position: relative;
+    z-index: 1;
+}
+
+.slider-one_image::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle,
+        rgba(14, 181, 186, 0.1) 0%,
+        rgba(14, 181, 186, 0.05) 40%,
+        transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Responsividade para a sombra */
+@media (max-width: 768px) {
+    .slider-one_image img[src*="image-1.png"] {
+        border-radius: 15px;
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.25),
+            0 8px 20px rgba(14, 181, 186, 0.15),
+            0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .slider-one_image img[src*="image-1.png"]:hover {
+        transform: translateY(-3px) scale(1.01);
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.3),
+            0 10px 25px rgba(14, 181, 186, 0.2),
+            0 5px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider-one_image::after {
+        display: none;
+    }
+}
